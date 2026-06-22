@@ -1,0 +1,338 @@
+[gd_scene format=3 uid="uid://ck7mo8urmd5jt"]
+
+[ext_resource type="Script" uid="uid://dkai5kv4n1eih" path="res://character_body_3d.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://clqk5nbr8jyvr" path="res://global.gd" id="1_272bh"]
+[ext_resource type="PackedScene" uid="uid://1iyuac1gmgy5" path="res://terrain.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bcdjerl5fjspx" path="res://sawblade.tscn" id="1_ig7tw"]
+[ext_resource type="Shape3D" uid="uid://c84uh1tvnu2mh" path="res://new_concave_polygon_shape_3d.res" id="2_lquwl"]
+[ext_resource type="Shape3D" uid="uid://dpaw84jjpq61f" path="res://houzpolycolider.tres" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dwowpbq351nnx" path="res://my_queen.tscn" id="5_lquwl"]
+[ext_resource type="Shader" uid="uid://c8amwtkt06igb" path="res://blur.gdshader" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://ct04yvagq2nny" path="res://gamover_menu.gd" id="9_4c57u"]
+[ext_resource type="Script" uid="uid://rw4ws13bykoi" path="res://cool_button.gd" id="9_kek77"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+fog_enabled = true
+fog_mode = 1
+fog_density = 0.9964
+fog_depth_curve = 1.7674624
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vxte"]
+size = Vector3(1, 11.734, 253.317)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3vxte"]
+height = 0.07
+radius = 0.1
+
+[sub_resource type="Gradient" id="Gradient_7mycd"]
+offsets = PackedFloat32Array(0, 0.7514604, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.634584, 1, 1, 1, 0.5137255)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kek77"]
+gradient = SubResource("Gradient_7mycd")
+
+[sub_resource type="Curve" id="Curve_h2yge"]
+_data = [Vector2(0, 0.09943366), 0.0, 0.0, 0, 0, Vector2(0.70064765, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0xm2m"]
+curve = SubResource("Curve_h2yge")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3vxte"]
+emission_shape_scale = Vector3(0.03, 0.03, 0.03)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -720.0
+angle_max = 720.0
+use_rotation_3d = true
+rotation_3d_min = Vector3(-180.318, 0, 0)
+rotation_3d_max = Vector3(180, 0, 0)
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 0.39999998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_0xm2m")
+color_ramp = SubResource("GradientTexture1D_kek77")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.34, 0.23981334, 0.1632, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_a0ajy"]
+lightmap_size_hint = Vector2i(3, 2)
+material = SubResource("StandardMaterial3D_272bh")
+radius = 0.05
+height = 0.1
+radial_segments = 10
+rings = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vxte"]
+shader = ExtResource("8_5vw27")
+shader_parameter/blur_radius = 1.0
+shader_parameter/blur_amount = 0.0
+shader_parameter/blur_inner = 0.0
+shader_parameter/blur_outer = 0.0
+
+[sub_resource type="Animation" id="Animation_kek77"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4c57u"]
+resource_name = "gameover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.6910001278225]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_efxa6"]
+_data = {
+&"RESET": SubResource("Animation_kek77"),
+&"gameover": SubResource("Animation_4c57u")
+}
+
+[node name="Node3D" type="Node3D" unique_id=470230162]
+script = ExtResource("1_272bh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1215767997]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=503868942]
+environment = SubResource("Environment_h2yge")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1997666763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="terrain" parent="StaticBody3D" unique_id=1593239044 instance=ExtResource("1_h2yge")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1889330141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.64277, -0.82836914, 0)
+shape = SubResource("BoxShape3D_3vxte")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=2087805623]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.6942215, -0.82836914, -105.14967)
+shape = SubResource("BoxShape3D_3vxte")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=734498414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.360886, -0.82836914, 18.96202)
+shape = SubResource("BoxShape3D_3vxte")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1759609995]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.83226, -0.82836914, 105.07218)
+shape = SubResource("BoxShape3D_3vxte")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=338696910]
+transform = Transform3D(1.6498107, 0, 0, 0, 1.6498107, 0, 0, 0, 1.6498107, 0, -1.603603, 0)
+shape = ExtResource("2_lquwl")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" unique_id=1142136467]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0.312006, 1.303226, -11.180347)
+shape = ExtResource("3_7mycd")
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=43331874 node_paths=PackedStringArray("sawblade")]
+floor_snap_length = 23.03
+script = ExtResource("1_0xm2m")
+sawblade = NodePath("sawblade")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="player" unique_id=1224601495]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1613088, 0.6759785, 0)
+remote_path = NodePath("../SubViewportContainer/SubViewport/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1765264534]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_3vxte")
+
+[node name="sawblade" parent="player" unique_id=677611315 instance=ExtResource("1_ig7tw")]
+rotation_speed = 20.0
+
+[node name="RayCast3D" type="RayCast3D" parent="player" unique_id=1570947802]
+target_position = Vector3(8, 6, 0)
+hit_from_inside = true
+
+[node name="Camera3D" type="Camera3D" parent="player/RayCast3D" unique_id=1558790501]
+transform = Transform3D(-4.371139e-08, -0.42261824, 0.9063077, 0, 0.9063077, 0.42261824, -1, 1.847323e-08, -3.9615966e-08, 1, 0.75, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="player" unique_id=1550224965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103, 0)
+amount = 64
+speed_scale = 3.0
+process_material = SubResource("ParticleProcessMaterial_3vxte")
+draw_pass_1 = SubResource("SphereMesh_a0ajy")
+
+[node name="ColorRect" type="ColorRect" parent="player" unique_id=816048674]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -822.0
+offset_bottom = -458.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="player" unique_id=926011148]
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(0.5, 0.5)
+
+[node name="SubViewport" type="SubViewport" parent="player/SubViewportContainer" unique_id=1903890052]
+handle_input_locally = false
+scaling_3d_mode = 5
+size = Vector2i(640, 360)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="player/SubViewportContainer/SubViewport" unique_id=821853477]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1613088, 0.6759785, 0)
+
+[node name="hi" parent="." unique_id=1848445595 node_paths=PackedStringArray("target") instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3675015, -1.5764182, -7.072159)
+collision_layer = 0
+target = NodePath("../player")
+
+[node name="Rearview" type="Label" parent="." unique_id=1998182403]
+offset_left = 4.0
+offset_top = 185.0
+offset_right = 44.0
+offset_bottom = 208.0
+theme_override_constants/outline_size = 8
+text = "Rear view"
+
+[node name="Speed" type="Label" parent="." unique_id=856080196]
+offset_left = 4.0
+offset_top = 209.0
+offset_right = 80.0
+offset_bottom = 232.0
+theme_override_constants/outline_size = 8
+text = "Rear view"
+
+[node name="Control" type="Control" parent="." unique_id=1695137225]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2016302850]
+material = SubResource("ShaderMaterial_3vxte")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=161535611]
+libraries/ = SubResource("AnimationLibrary_efxa6")
+
+[node name="Panel" type="Panel" parent="Control" unique_id=717295801]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -261.0
+offset_right = 449.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+script = ExtResource("9_4c57u")
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=405707220]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 40.0
+offset_right = 20.0
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 60
+text = "Game Over!
+you have been captured"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="Control/Panel" unique_id=589835524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -34.0
+offset_right = 276.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 91
+text = "Retry"
+script = ExtResource("9_kek77")
+size_increase_ease_type = 2
+size_decrease_ease_type = 2
+metadata/_custom_type_script = "uid://rw4ws13bykoi"

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bcdjerl5fjspx"]
+
+[ext_resource type="PackedScene" uid="uid://cd8a46wxn0md2" path="res://sawblade.glb" id="1_cwyet"]
+[ext_resource type="Script" uid="uid://l7lmln0i28l7" path="res://sawblade.gd" id="2_6alnm"]
+[ext_resource type="Material" uid="uid://b6khmw62igiv8" path="res://metal.tres" id="2_grbjo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6alnm"]
+albedo_color = Color(0.53, 0.53, 0.53, 1)
+metallic = 1.0
+roughness = 0.0
+
+[node name="sawblade" unique_id=677611315 instance=ExtResource("1_cwyet")]
+transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.1, 0, 0.1, -4.371139e-09, 0, 0, 0)
+script = ExtResource("2_6alnm")
+rotation_speed = 0.938
+
+[node name="Cylinder" parent="." index="0" unique_id=228070071]
+transform = Transform3D(0.5884682, 0, 0.80881715, 0, 1, 0, -0.80881715, 0, 0.5884682, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_grbjo")
+
+[node name="Cube" parent="." index="1" unique_id=1784416193]
+transform = Transform3D(0.5884682, 0, 0.80881715, 0, 1, 0, -0.80881715, 0, 0.5884682, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_6alnm")
