@@ -29,6 +29,9 @@ fog_depth_curve = 1.7674624
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vxte"]
 size = Vector3(1, 11.734, 253.317)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4c57u"]
+data = PackedVector3Array(-4.823, 0.5, 6.718, 4.823, 0.5, 6.718, -4.823, -0.5, 6.718, 4.823, 0.5, 6.718, 4.823, -0.5, 6.718, -4.823, -0.5, 6.718, 4.823, 0.5, -6.718, -4.823, 0.5, -6.718, 4.823, -0.5, -6.718, -4.823, 0.5, -6.718, -4.823, -0.5, -6.718, 4.823, -0.5, -6.718, 4.823, 0.5, 6.718, 4.823, 0.5, -6.718, 4.823, -0.5, 6.718, 4.823, 0.5, -6.718, 4.823, -0.5, -6.718, 4.823, -0.5, 6.718, -4.823, 0.5, -6.718, -4.823, 0.5, 6.718, -4.823, -0.5, -6.718, -4.823, 0.5, 6.718, -4.823, -0.5, 6.718, -4.823, -0.5, -6.718, 4.823, 0.5, 6.718, -4.823, 0.5, 6.718, 4.823, 0.5, -6.718, -4.823, 0.5, 6.718, -4.823, 0.5, -6.718, 4.823, 0.5, -6.718, -4.823, -0.5, 6.718, 4.823, -0.5, 6.718, -4.823, -0.5, -6.718, 4.823, -0.5, 6.718, 4.823, -0.5, -6.718, -4.823, -0.5, -6.718)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3vxte"]
 height = 0.07
 radius = 0.1
@@ -183,7 +186,12 @@ shape = ExtResource("2_lquwl")
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0.312006, 1.303226, -11.180347)
 shape = ExtResource("3_7mycd")
 
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=1144584855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47691464, 1.2956749, -11.248014)
+shape = SubResource("ConcavePolygonShape3D_4c57u")
+
 [node name="player" type="CharacterBody3D" parent="." unique_id=43331874 node_paths=PackedStringArray("sawblade")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3443818, -1.9238312, -7.143875)
 floor_snap_length = 23.03
 script = ExtResource("1_0xm2m")
 sawblade = NodePath("sawblade")
@@ -236,10 +244,10 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="player/SubViewportContainer/SubViewport" unique_id=821853477]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1613088, 0.6759785, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -5.9825664)
 
 [node name="hi" parent="." unique_id=1848445595 node_paths=PackedStringArray("target") instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3675015, -1.5764182, -7.072159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2172503, -1.1288506, -8.764658)
 collision_layer = 0
 target = NodePath("../player")
 

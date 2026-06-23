@@ -1,0 +1,421 @@
+[gd_scene format=3 uid="uid://c7enygu3rgq83"]
+
+[ext_resource type="PackedScene" uid="uid://1iyuac1gmgy5" path="res://terrain.tscn" id="1_k28g6"]
+[ext_resource type="Script" uid="uid://q0pnk24e0sht" path="res://cuhscene.gd" id="1_n3tue"]
+[ext_resource type="PackedScene" uid="uid://dwowpbq351nnx" path="res://my_queen.tscn" id="2_ng0rm"]
+[ext_resource type="PackedScene" uid="uid://bcdjerl5fjspx" path="res://sawblade.tscn" id="3_rb1l2"]
+[ext_resource type="AudioStream" uid="uid://dhuok3k7r1ti4" path="res://raah-meme-sound-effect.mp3" id="3_sicxv"]
+[ext_resource type="AudioStream" uid="uid://cjn6wkru3w4mb" path="res://grinder-noise-caldruki.mp3" id="4_3dyhr"]
+[ext_resource type="Texture2D" uid="uid://dj4qr427f32x4" path="res://oak_veneer_01_4k.blend/textures/oak_veneer_01_diff_4k.jpg" id="4_7ulck"]
+[ext_resource type="AudioStream" uid="uid://ckcn71ebo7p36" path="res://cartoonslip.mp3" id="6_sicxv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rb1l2"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7ulck"]
+sky_material = SubResource("ProceduralSkyMaterial_rb1l2")
+
+[sub_resource type="Environment" id="Environment_3dyhr"]
+background_mode = 2
+sky = SubResource("Sky_7ulck")
+
+[sub_resource type="Animation" id="Animation_ng0rm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.30957472, 3.322392, -10.979233)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5013273, 2.5536776, -9.26616)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("focus:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.178594, 2.6534774, -9.799616)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("focus:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sawblade:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7839631, 2.5288005, -9.258038)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("OmniLight3D:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GPUParticles3D:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("slip:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("sawblade/AudioStreamPlayer3D:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("terrain/CharacterBody3D/RaahMemeSoundEffect:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("terrain/CharacterBody3D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.1275216, 2.532587, -8.525078)]
+}
+
+[sub_resource type="Animation" id="Animation_jmk38"]
+resource_name = "cuh"
+length = 15.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.30957472, 3.322392, -10.979233), Vector3(-1.0617311, 3.322392, -10.979233)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camera1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("focus")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5, 2.81, 4.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5013273, 2.5536776, -9.26616), Vector3(-1.5013273, 2.5536776, -9.26616), Vector3(-1.1379058, 2.5537775, -9.26611), Vector3(-0.329, 2.554, -9.266)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("focus:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.266667, 6.766667, 9.5, 10),
+"transitions": PackedFloat32Array(1, -2, -2, 1, 1),
+"update": 0,
+"values": [Vector3(-1.178594, 2.6534774, -9.799616), Vector3(-1.178594, 2.6534774, -9.799616), Vector3(-0.78714645, 2.6534774, -9.033475), Vector3(-0.78714645, 2.6534774, -9.033475), Vector3(-0.787, 2.926, -9.033)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("focus:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6.275, 6.775, 9.5, 10),
+"transitions": PackedFloat32Array(1, -2, -2, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0), Vector3(0, 3.1415927, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.25481808, 2.7750735, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("sawblade:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8.366667, 8.84),
+"transitions": PackedFloat32Array(1, -2, -2),
+"update": 0,
+"values": [Vector3(-0.7839631, 2.5288005, -9.258038), Vector3(-0.7839631, 2.5288005, -9.258038), Vector3(-3.32, 3.841, -9.258)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OmniLight3D:light_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.78, 2.87, 4.21, 4.28),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.34, 0.34, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GPUParticles3D:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.78, 2.87, 4.21, 4.28),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("slip:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(8.366667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("sawblade/AudioStreamPlayer3D:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.9333333, 7.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("terrain/CharacterBody3D/RaahMemeSoundEffect:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(11.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("terrain/CharacterBody3D:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(11.69, 11.8, 11.9, 12, 12.1, 12.2, 12.3, 13.4, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.636, -8.525), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.636, -8.525), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.636, -8.525), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.533, -9.823)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rb1l2"]
+_data = {
+&"RESET": SubResource("Animation_ng0rm"),
+&"cuh": SubResource("Animation_jmk38")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vxte"]
+size = Vector3(0.5, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jsku"]
+albedo_color = Color(0.43, 0.43, 0.43, 1)
+albedo_texture = ExtResource("4_7ulck")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5jsku"]
+particle_flag_align_y = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -4.9, 0)
+
+[sub_resource type="Gradient" id="Gradient_rb1l2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ulck"]
+gradient = SubResource("Gradient_rb1l2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb1l2"]
+transparency = 1
+albedo_color = Color(1, 0.95, 0, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.3
+emission_on_uv2 = true
+emission_texture = SubResource("GradientTexture2D_7ulck")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3vxte"]
+material = SubResource("StandardMaterial3D_rb1l2")
+top_radius = 0.002
+bottom_radius = 0.0
+height = 0.05
+
+[node name="cuhscene" type="Node3D" unique_id=258692914]
+script = ExtResource("1_n3tue")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1952583201]
+environment = SubResource("Environment_3dyhr")
+
+[node name="terrain" parent="." unique_id=1887053271 instance=ExtResource("1_k28g6")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="terrain" unique_id=745196781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3376203, -11.483199)
+omni_range = 4096.0
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="terrain" unique_id=1755796384]
+
+[node name="CharacterBody3D" parent="terrain" unique_id=1848445595 instance=ExtResource("2_ng0rm")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1275216, 2.532587, -8.525078)
+enabled = false
+
+[node name="RaahMemeSoundEffect" type="AudioStreamPlayer3D" parent="terrain/CharacterBody3D" unique_id=420717118]
+stream = ExtResource("3_sicxv")
+
+[node name="camera1" type="Camera3D" parent="." unique_id=2130385381]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.30957472, 3.322392, -10.979233)
+
+[node name="focus" type="Camera3D" parent="." unique_id=1528032241]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.178594, 2.6534774, -9.799616)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2086828797]
+libraries/ = SubResource("AnimationLibrary_rb1l2")
+autoplay = &"cuh"
+
+[node name="sawblade" parent="." unique_id=677611315 instance=ExtResource("3_rb1l2")]
+transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.1, 0, 0.1, -4.371139e-09, -0.7839631, 2.5288005, -9.258038)
+rotation_speed = 10.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="sawblade" unique_id=82054218]
+stream = ExtResource("4_3dyhr")
+max_distance = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=938354698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5013273, 2.5536776, -9.26616)
+mesh = SubResource("BoxMesh_3vxte")
+surface_material_override/0 = SubResource("StandardMaterial3D_5jsku")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1903922870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8846932, 2.5666096, -9.2566805)
+light_color = Color(1, 0.96966666, 0.86, 1)
+light_energy = 0.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1170609750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8846932, 2.5353248, -9.2566805)
+emitting = false
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_5jsku")
+draw_pass_1 = SubResource("CylinderMesh_3vxte")
+
+[node name="slip" type="AudioStreamPlayer" parent="." unique_id=2014241362]
+stream = ExtResource("6_sicxv")

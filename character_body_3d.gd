@@ -7,7 +7,8 @@ var enabled : bool = true
 var target_global_transform : Transform3D
 
 func _physics_process(delta: float) -> void:
-	$"../Speed".text = "Speed = " + str(round($sawblade.rotation_speed * 10) / 10.0)
+	var move_speed : float = $sawblade.rotation_speed * 2*PI * ((1.0/8.0) / 2.5)
+	$"../Speed".text = "Speed = " + str(move_speed)
 	if enabled:
 		$sawblade.rotation_speed -= delta * 0.2
 	else:
@@ -15,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	$CollisionShape3D.disabled = !enabled
 	if enabled:
 		velocity.y -= ProjectSettings.get_setting("physics/3d/default_gravity") * delta
-	var move_speed : float = $sawblade.rotation_speed * 2*PI * ((1.0/8.0) / 2.5)
+	
 	velocity.z = move_speed * sin(rotation.y)
 	velocity.x = -move_speed * cos(rotation.y)
 	$RayCast3D.rotation_degrees.y = lerp($RayCast3D.rotation_degrees.y, float(20 * last_direction), 0.05)
