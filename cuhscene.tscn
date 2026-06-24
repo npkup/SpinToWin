@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://cjn6wkru3w4mb" path="res://grinder-noise-caldruki.mp3" id="4_3dyhr"]
 [ext_resource type="Texture2D" uid="uid://dj4qr427f32x4" path="res://oak_veneer_01_4k.blend/textures/oak_veneer_01_diff_4k.jpg" id="4_7ulck"]
 [ext_resource type="AudioStream" uid="uid://ckcn71ebo7p36" path="res://cartoonslip.mp3" id="6_sicxv"]
+[ext_resource type="CylinderMesh" uid="uid://uxmcubaj8p3" path="res://spark.tres" id="8_ewgaq"]
+[ext_resource type="AudioStream" uid="uid://bt8n5nv1s8w4o" path="res://intro.mp3" id="9_1tlro"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rb1l2"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -133,7 +135,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("terrain/CharacterBody3D/RaahMemeSoundEffect:playing")
+tracks/9/path = NodePath("terrain/hi/AudioStreamPlayer3D:playing")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -145,19 +147,43 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("terrain/CharacterBody3D:position")
+tracks/10/path = NodePath("terrain/hi:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.1275216, 2.532587, -8.525078)]
+"values": [Vector3(-1.128, 2.5, -8.525)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Label2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_jmk38"]
 resource_name = "cuh"
-length = 15.0
+length = 13.3
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -298,11 +324,11 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("terrain/CharacterBody3D/RaahMemeSoundEffect:playing")
+tracks/11/path = NodePath("terrain/hi/AudioStreamPlayer3D:playing")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(11.5),
+"times": PackedFloat32Array(10.521667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -310,14 +336,38 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("terrain/CharacterBody3D:position")
+tracks/12/path = NodePath("terrain/hi:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(11.69, 11.8, 11.9, 12, 12.1, 12.2, 12.3, 13.4, 14),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(10.8, 10.9, 11, 11.1, 11.2, 11.3, 13, 13.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.636, -8.525), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.636, -8.525), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.636, -8.525), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.1275216, 2.532587, -8.525078), Vector3(-1.128, 2.533, -9.823)]
+"values": [Vector3(-1.128, 2.5, -8.525), Vector3(-1.128, 2.6, -8.525), Vector3(-1.128, 2.5, -8.525), Vector3(-1.128, 2.6, -8.525), Vector3(-1.128, 2.5, -8.525), Vector3(-1.128, 2.6, -8.525), Vector3(-1.128, 2.6, -8.525), Vector3(-1.128, 2.6, -9.51)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Label:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(10.729211, 10.809211, 11.959211, 12.089211),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Label2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(2.08, 2.19, 5.3338685, 5.4438686),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rb1l2"]
@@ -342,25 +392,6 @@ initial_velocity_min = 1.0
 initial_velocity_max = 1.0
 gravity = Vector3(0, -4.9, 0)
 
-[sub_resource type="Gradient" id="Gradient_rb1l2"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ulck"]
-gradient = SubResource("Gradient_rb1l2")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb1l2"]
-transparency = 1
-albedo_color = Color(1, 0.95, 0, 1)
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.3
-emission_on_uv2 = true
-emission_texture = SubResource("GradientTexture2D_7ulck")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_3vxte"]
-material = SubResource("StandardMaterial3D_rb1l2")
-top_radius = 0.002
-bottom_radius = 0.0
-height = 0.05
-
 [node name="cuhscene" type="Node3D" unique_id=258692914]
 script = ExtResource("1_n3tue")
 
@@ -373,13 +404,13 @@ environment = SubResource("Environment_3dyhr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3376203, -11.483199)
 omni_range = 4096.0
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="terrain" unique_id=1755796384]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="terrain" unique_id=1755796384]
 
-[node name="CharacterBody3D" parent="terrain" unique_id=1848445595 instance=ExtResource("2_ng0rm")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1275216, 2.532587, -8.525078)
+[node name="hi" parent="terrain" unique_id=1848445595 instance=ExtResource("2_ng0rm")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.128, 2.5, -8.525)
 enabled = false
 
-[node name="RaahMemeSoundEffect" type="AudioStreamPlayer3D" parent="terrain/CharacterBody3D" unique_id=420717118]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="terrain/hi" unique_id=344003855]
 stream = ExtResource("3_sicxv")
 
 [node name="camera1" type="Camera3D" parent="." unique_id=2130385381]
@@ -409,13 +440,45 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5jsku")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8846932, 2.5666096, -9.2566805)
 light_color = Color(1, 0.96966666, 0.86, 1)
 light_energy = 0.0
+shadow_enabled = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1170609750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8846932, 2.5353248, -9.2566805)
 emitting = false
 amount = 128
 process_material = SubResource("ParticleProcessMaterial_5jsku")
-draw_pass_1 = SubResource("CylinderMesh_3vxte")
+draw_pass_1 = ExtResource("8_ewgaq")
 
 [node name="slip" type="AudioStreamPlayer" parent="." unique_id=2014241362]
 stream = ExtResource("6_sicxv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2076972723]
+stream = ExtResource("9_1tlro")
+autoplay = true
+
+[node name="Label" type="Label" parent="." unique_id=683534927]
+visible = false
+offset_left = 711.0
+offset_top = 161.0
+offset_right = 948.0
+offset_bottom = 189.0
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 20
+text = "James : Nooooo! My Sawblade!!!!"
+
+[node name="Label2" type="Label" parent="." unique_id=79429146]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.5
+offset_top = -52.0
+offset_right = 223.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 20
+text = "James : Let me practice my woodworking skills"

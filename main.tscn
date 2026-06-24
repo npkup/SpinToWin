@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://clqk5nbr8jyvr" path="res://global.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://1iyuac1gmgy5" path="res://terrain.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bcdjerl5fjspx" path="res://sawblade.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://brvmw885cvkrw" path="res://chicken.tscn" id="2_efxa6"]
 [ext_resource type="Shape3D" uid="uid://c84uh1tvnu2mh" path="res://new_concave_polygon_shape_3d.res" id="2_lquwl"]
 [ext_resource type="Shape3D" uid="uid://dpaw84jjpq61f" path="res://houzpolycolider.tres" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cmkjgd2kbxjq2" path="res://barrel.tscn" id="3_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dwowpbq351nnx" path="res://my_queen.tscn" id="5_lquwl"]
 [ext_resource type="Shader" uid="uid://c8amwtkt06igb" path="res://blur.gdshader" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://ct04yvagq2nny" path="res://gamover_menu.gd" id="9_4c57u"]
@@ -31,6 +33,9 @@ size = Vector3(1, 11.734, 253.317)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4c57u"]
 data = PackedVector3Array(-4.823, 0.5, 6.718, 4.823, 0.5, 6.718, -4.823, -0.5, 6.718, 4.823, 0.5, 6.718, 4.823, -0.5, 6.718, -4.823, -0.5, 6.718, 4.823, 0.5, -6.718, -4.823, 0.5, -6.718, 4.823, -0.5, -6.718, -4.823, 0.5, -6.718, -4.823, -0.5, -6.718, 4.823, -0.5, -6.718, 4.823, 0.5, 6.718, 4.823, 0.5, -6.718, 4.823, -0.5, 6.718, 4.823, 0.5, -6.718, 4.823, -0.5, -6.718, 4.823, -0.5, 6.718, -4.823, 0.5, -6.718, -4.823, 0.5, 6.718, -4.823, -0.5, -6.718, -4.823, 0.5, 6.718, -4.823, -0.5, 6.718, -4.823, -0.5, -6.718, 4.823, 0.5, 6.718, -4.823, 0.5, 6.718, 4.823, 0.5, -6.718, -4.823, 0.5, 6.718, -4.823, 0.5, -6.718, 4.823, 0.5, -6.718, -4.823, -0.5, 6.718, 4.823, -0.5, 6.718, -4.823, -0.5, -6.718, 4.823, -0.5, 6.718, 4.823, -0.5, -6.718, -4.823, -0.5, -6.718)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dg77c"]
+data = PackedVector3Array(-6.6654997, 0.5, 5.24, 6.6654997, 0.5, 5.24, -6.6654997, -0.5, 5.24, 6.6654997, 0.5, 5.24, 6.6654997, -0.5, 5.24, -6.6654997, -0.5, 5.24, 6.6654997, 0.5, -5.24, -6.6654997, 0.5, -5.24, 6.6654997, -0.5, -5.24, -6.6654997, 0.5, -5.24, -6.6654997, -0.5, -5.24, 6.6654997, -0.5, -5.24, 6.6654997, 0.5, 5.24, 6.6654997, 0.5, -5.24, 6.6654997, -0.5, 5.24, 6.6654997, 0.5, -5.24, 6.6654997, -0.5, -5.24, 6.6654997, -0.5, 5.24, -6.6654997, 0.5, -5.24, -6.6654997, 0.5, 5.24, -6.6654997, -0.5, -5.24, -6.6654997, 0.5, 5.24, -6.6654997, -0.5, 5.24, -6.6654997, -0.5, -5.24, 6.6654997, 0.5, 5.24, -6.6654997, 0.5, 5.24, 6.6654997, 0.5, -5.24, -6.6654997, 0.5, 5.24, -6.6654997, 0.5, -5.24, 6.6654997, 0.5, -5.24, -6.6654997, -0.5, 5.24, 6.6654997, -0.5, 5.24, -6.6654997, -0.5, -5.24, 6.6654997, -0.5, 5.24, 6.6654997, -0.5, -5.24, -6.6654997, -0.5, -5.24)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3vxte"]
 height = 0.07
@@ -147,6 +152,205 @@ _data = {
 &"gameover": SubResource("Animation_4c57u")
 }
 
+[sub_resource type="Animation" id="Animation_efxa6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.2172503, -1.1288506, -8.693717)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hi:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.3443818, -1.9238312, -5.2713966)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("player:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hi:enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+resource_name = "starting_cutscene"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.1333334, 2.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.2172503, -1.1288506, -10.2971325), Vector3(2.2172503, -1.1288506, -8.693717)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hi:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.1333334, 2.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hi:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cutscen")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("player:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 1.7333333, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2.3443818, -1.9238312, -8.423058), Vector3(2.3443818, -1.9238312, -5.2713966), Vector3(2.3443818, -1.9238312, -5.2713966)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("player/RayCast3D/Camera3D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.6666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/Label:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(-0.099999905, 0, 0.10000014, 2.7000003, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("player:enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2086),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_reset_destruction"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycdy4"]
+_data = {
+&"RESET": SubResource("Animation_efxa6"),
+&"starting_cutscene": SubResource("Animation_dg77c")
+}
+
 [node name="Node3D" type="Node3D" unique_id=470230162]
 script = ExtResource("1_272bh")
 
@@ -156,6 +360,146 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=503868942]
 environment = SubResource("Environment_h2yge")
+
+[node name="DestructibleObjects" type="Node3D" parent="." unique_id=269223142]
+
+[node name="Chicken" parent="DestructibleObjects" unique_id=712492892 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.379442, -0.28730726, 0)
+
+[node name="Chicken2" parent="DestructibleObjects" unique_id=1316141472 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.158737, -1.1775627, -5.8483152)
+
+[node name="Chicken3" parent="DestructibleObjects" unique_id=794785293 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.986607, -1.0923573, -14.435964)
+
+[node name="Chicken4" parent="DestructibleObjects" unique_id=1402131819 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.10809, -0.37606192, -22.992867)
+
+[node name="Chicken5" parent="DestructibleObjects" unique_id=1324945541 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4907131, -0.7267909, -22.992867)
+
+[node name="Chicken6" parent="DestructibleObjects" unique_id=302549210 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5670757, -0.37606192, -22.992867)
+
+[node name="Chicken7" parent="DestructibleObjects" unique_id=1918138187 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5401373, -1.1656812, -19.189861)
+
+[node name="Chicken8" parent="DestructibleObjects" unique_id=1000621950 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5401373, -1.1656812, -11.53856)
+
+[node name="Chicken9" parent="DestructibleObjects" unique_id=979696852 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.307453, -1.1656812, -11.53856)
+
+[node name="Chicken10" parent="DestructibleObjects" unique_id=1630005616 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.307453, 0.071177125, -18.948238)
+
+[node name="Chicken11" parent="DestructibleObjects" unique_id=209901080 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.413307, 2.2585478, -18.948238)
+
+[node name="Chicken12" parent="DestructibleObjects" unique_id=508359836 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.413307, 0.39611983, -7.798815)
+
+[node name="Chicken13" parent="DestructibleObjects" unique_id=239125785 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.046171, 2.2585478, 3.9898663)
+
+[node name="Chicken14" parent="DestructibleObjects" unique_id=119918859 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.591846, 3.096601, 3.9898663)
+
+[node name="Chicken15" parent="DestructibleObjects" unique_id=1331170260 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.591846, 5.6042256, -22.410458)
+
+[node name="Chicken16" parent="DestructibleObjects" unique_id=997245629 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.400227, 2.7122355, -30.503654)
+
+[node name="Chicken17" parent="DestructibleObjects" unique_id=1762208454 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2888613, 5.0245028, -37.983326)
+
+[node name="Chicken18" parent="DestructibleObjects" unique_id=915933380 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.311141, 5.4240055, -37.983326)
+
+[node name="Chicken19" parent="DestructibleObjects" unique_id=1652502031 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.513279, 3.6441183, -32.646576)
+
+[node name="Chicken20" parent="DestructibleObjects" unique_id=746815587 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.714033, 5.093709, -32.646576)
+
+[node name="Chicken21" parent="DestructibleObjects" unique_id=1628706105 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.714033, 1.3338385, -18.426874)
+
+[node name="Chicken22" parent="DestructibleObjects" unique_id=1498593264 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.714033, 1.3338385, -3.4057121)
+
+[node name="Barrel" parent="DestructibleObjects" unique_id=770748373 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0426135, -2.14371, -6.9284415)
+
+[node name="Barrel2" parent="DestructibleObjects" unique_id=1774605583 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4703033, -2.14371, -6.9284415)
+
+[node name="Barrel3" parent="DestructibleObjects" unique_id=513435036 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 0.9358106, -0.35250312, 0, 0.35250312, 0.9358106, -1.4703033, -0.6977127, -24.327396)
+
+[node name="Barrel4" parent="DestructibleObjects" unique_id=1975536017 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 0.9358106, -0.35250312, 0, 0.35250312, 0.9358106, -1.4703033, -0.51944846, -24.956045)
+
+[node name="Barrel5" parent="DestructibleObjects" unique_id=2113981195 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 0.9358106, -0.35250312, 0, 0.35250312, 0.9358106, -0.97378373, -0.6266204, -24.563965)
+
+[node name="Barrel6" parent="DestructibleObjects" unique_id=991520910 instance=ExtResource("3_dg77c")]
+transform = Transform3D(0.98393136, -0.16708621, 0.062938385, 0.17832021, 0.93736655, -0.29924217, -0.008997078, 0.305657, 0.9520991, 12.148229, 0.55113536, -24.322153)
+
+[node name="Barrel7" parent="DestructibleObjects" unique_id=1229954285 instance=ExtResource("3_dg77c")]
+transform = Transform3D(0.98393136, -0.16708621, 0.062938385, 0.17832021, 0.93736655, -0.29924217, -0.008997078, 0.305657, 0.9520991, 12.1164, 0.6946343, -24.958841)
+
+[node name="Barrel8" parent="DestructibleObjects" unique_id=1042367339 instance=ExtResource("3_dg77c")]
+transform = Transform3D(0.98393136, -0.16708621, 0.062938385, 0.17832021, 0.93736655, -0.29924217, -0.008997078, 0.305657, 0.9520991, 12.624077, 0.69761515, -24.566412)
+
+[node name="Barrel9" parent="DestructibleObjects" unique_id=634462905 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.902514, -0.7288968, -9.7940235)
+
+[node name="Barrel10" parent="DestructibleObjects" unique_id=775323416 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.590158, -0.7288968, -9.584785)
+
+[node name="Barrel11" parent="DestructibleObjects" unique_id=1106394709 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.232834, -0.7288968, -8.750381)
+
+[node name="Barrel12" parent="DestructibleObjects" unique_id=430110727 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.98742, -0.7288968, -10.416638)
+
+[node name="Barrel13" parent="DestructibleObjects" unique_id=664513345 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.952053, -0.7288968, -9.7940235)
+
+[node name="Barrel14" parent="DestructibleObjects" unique_id=1947865130 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.345478, -0.7288968, -10.868765)
+
+[node name="Barrel15" parent="DestructibleObjects" unique_id=1447648990 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.927837, -0.7288968, -9.7940235)
+
+[node name="Barrel16" parent="DestructibleObjects" unique_id=1336720914 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.746529, -0.7288968, -10.825967)
+
+[node name="Barrel17" parent="DestructibleObjects" unique_id=160330339 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.534737, -0.7288968, -11.119407)
+
+[node name="Barrel18" parent="DestructibleObjects" unique_id=1320763310 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.590158, -0.7288968, -12.681276)
+
+[node name="Barrel19" parent="DestructibleObjects" unique_id=793976507 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.740124, -0.7288968, -11.119407)
+
+[node name="Barrel20" parent="DestructibleObjects" unique_id=2010068682 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.613817, -0.7288968, -12.927709)
+
+[node name="Barrel21" parent="DestructibleObjects" unique_id=505147142 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.383598, -0.7288968, -11.119407)
+
+[node name="Barrel22" parent="DestructibleObjects" unique_id=629023502 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.354067, -0.7288968, -8.574821)
+
+[node name="Barrel23" parent="DestructibleObjects" unique_id=681309712 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0509, -0.7288968, -10.1677685)
+
+[node name="Barrel24" parent="DestructibleObjects" unique_id=1477888851 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.742739, -0.7288968, -12.332035)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1997666763]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
@@ -190,8 +534,12 @@ shape = ExtResource("3_7mycd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47691464, 1.2956749, -11.248014)
 shape = SubResource("ConcavePolygonShape3D_4c57u")
 
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D" unique_id=1449550325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.450756, 2.7018232, -11.335451)
+shape = SubResource("ConcavePolygonShape3D_dg77c")
+
 [node name="player" type="CharacterBody3D" parent="." unique_id=43331874 node_paths=PackedStringArray("sawblade")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3443818, -1.9238312, -7.143875)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3443818, -1.9238312, -5.2713966)
 floor_snap_length = 23.03
 script = ExtResource("1_0xm2m")
 sawblade = NodePath("sawblade")
@@ -205,14 +553,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 shape = SubResource("CylinderShape3D_3vxte")
 
 [node name="sawblade" parent="player" unique_id=677611315 instance=ExtResource("1_ig7tw")]
-rotation_speed = 20.0
+rotation_speed = 15.0
 
 [node name="RayCast3D" type="RayCast3D" parent="player" unique_id=1570947802]
-target_position = Vector3(8, 6, 0)
+target_position = Vector3(1, 0.75, 0)
 hit_from_inside = true
 
 [node name="Camera3D" type="Camera3D" parent="player/RayCast3D" unique_id=1558790501]
 transform = Transform3D(-4.371139e-08, -0.42261824, 0.9063077, 0, 0.9063077, 0.42261824, -1, 1.847323e-08, -3.9615966e-08, 1, 0.75, 0)
+fov = 120.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="player" unique_id=1550224965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103, 0)
@@ -244,17 +593,17 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="player/SubViewportContainer/SubViewport" unique_id=821853477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -5.9825664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -4.110088)
 
 [node name="hi" parent="." unique_id=1848445595 node_paths=PackedStringArray("target") instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2172503, -1.1288506, -8.764658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2172503, -1.1288506, -8.693717)
 collision_layer = 0
 target = NodePath("../player")
 
 [node name="Rearview" type="Label" parent="." unique_id=1998182403]
 offset_left = 4.0
 offset_top = 185.0
-offset_right = 44.0
+offset_right = 80.0
 offset_bottom = 208.0
 theme_override_constants/outline_size = 8
 text = "Rear view"
@@ -344,3 +693,57 @@ script = ExtResource("9_kek77")
 size_increase_ease_type = 2
 size_decrease_ease_type = 2
 metadata/_custom_type_script = "uid://rw4ws13bykoi"
+
+[node name="Label2" type="Label" parent="Control/Panel" unique_id=458152235]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -31.0
+offset_right = 67.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 25
+text = "Your score was = "
+
+[node name="Label" type="Label" parent="Control" unique_id=145201114]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -166.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 24
+text = "Press \"A\" and \"D\" to steer the sawblade
+Destroy as much of james' property as possible"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=84072166]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = 8.0
+offset_right = 38.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 8
+text = "Value of property destroyed = "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=676702208]
+libraries/ = SubResource("AnimationLibrary_ycdy4")
+autoplay = &"starting_cutscene"
+
+[node name="cutscen" type="Camera3D" parent="." unique_id=1090819829]
+transform = Transform3D(0.93728197, 0, -0.34857205, 0, 1, 0, 0.34857205, 0, 0.93728197, 0.049990118, -1.4700538, -6.4710593)

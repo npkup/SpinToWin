@@ -6,6 +6,7 @@ var chasing : bool = true
 
 func _physics_process(_delta: float) -> void:
 	if enabled:
+		$AnimationPlayer.play("walk")
 		var direction : Vector3 = global_position.direction_to(target.global_position)
 		direction.y = 0
 		direction.normalized()

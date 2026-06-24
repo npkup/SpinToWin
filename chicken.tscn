@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://brvmw885cvkrw"]
+
+[ext_resource type="ArrayMesh" uid="uid://lxi7dggo4mlr" path="res://chicken.res" id="1_45cuv"]
+[ext_resource type="Script" uid="uid://c2vjw7y1ivn4y" path="res://chicken.gd" id="1_tl7hd"]
+[ext_resource type="Script" uid="uid://d2kxgyi3x8mjd" path="res://destructible_object.gd" id="2_isa2u"]
+[ext_resource type="Texture2D" uid="uid://cofl4gfcsmfvs" path="res://Low Poly Chicken_v1_001_Diffuse.png" id="3_xhwt5"]
+[ext_resource type="AudioStream" uid="uid://dnc5htkqxw483" path="res://chicken_hurt.mp3" id="4_vs43v"]
+[ext_resource type="AudioStream" uid="uid://p8oiir8hocyb" path="res://chicken.mp3" id="4_vtlia"]
+[ext_resource type="AudioStream" uid="uid://dcbsftoyx1esv" path="res://swordslzi.mp3" id="5_nnst4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhwt5"]
+resource_local_to_scene = true
+resource_name = "VRayMtl1SG"
+cull_mode = 2
+albedo_texture = ExtResource("3_xhwt5")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vxte"]
+radius = 0.125
+height = 0.45332336
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vxte"]
+size = Vector3(0.58618164, 0.664917, 1)
+
+[sub_resource type="Gradient" id="Gradient_nnst4"]
+offsets = PackedFloat32Array(0, 0.7939095, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1.353256, 1.353256, 1.353256, 1, 1.353256, 1.353256, 1.353256, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ewgaq"]
+gradient = SubResource("Gradient_nnst4")
+
+[sub_resource type="Curve" id="Curve_xhwt5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.060846567), 0.0, 0.0, 0, 0, Vector2(0.13514611, 1), 0.0, 0.0, 0, 0, Vector2(0.7407079, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_1tlro"]
+curve = SubResource("Curve_xhwt5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5jsku"]
+particle_flag_align_y = true
+angle_min = -873.3
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 1.62
+initial_velocity_max = 3.61
+gravity = Vector3(0, -4.9, 0)
+scale_min = 0.59999996
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_1tlro")
+color_ramp = SubResource("GradientTexture1D_ewgaq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0ajy"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.75, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vxte"]
+material = SubResource("StandardMaterial3D_a0ajy")
+size = Vector3(0.04, 0.04, 0.04)
+
+[sub_resource type="Animation" id="Animation_nnst4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xhwt5"]
+resource_name = "die"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sa2qs"]
+_data = {
+&"RESET": SubResource("Animation_nnst4"),
+&"die": SubResource("Animation_xhwt5")
+}
+
+[node name="Chicken" type="RigidBody3D" unique_id=712492892]
+collision_layer = 0
+lock_rotation = true
+script = ExtResource("1_tl7hd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1332613183]
+transform = Transform3D(0.05, 0, 0, 0, -2.1855695e-09, -0.05, 0, 0.05, -2.1855695e-09, 0, -0.13797344, 0)
+mesh = ExtResource("1_45cuv")
+surface_material_override/0 = SubResource("StandardMaterial3D_xhwt5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=295953303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22910309, 0)
+shape = SubResource("CapsuleShape3D_3vxte")
+
+[node name="Destructible_Object" type="Area3D" parent="." unique_id=452494084 node_paths=PackedStringArray("object")]
+script = ExtResource("2_isa2u")
+object = NodePath("..")
+knockback = 20.0
+destructible_sound = ExtResource("4_vs43v")
+destructible_sound2 = ExtResource("5_nnst4")
+cost = 50
+metadata/_custom_type_script = "uid://d2kxgyi3x8mjd"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destructible_Object" unique_id=2070108016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32269287, 0)
+shape = SubResource("BoxShape3D_3vxte")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1347407909]
+stream = ExtResource("4_vtlia")
+volume_db = -27.242
+autoplay = true
+parameters/looping = true
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=262368797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24615008, 0.7200781)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1918272349]
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5jsku")
+draw_pass_1 = SubResource("BoxMesh_3vxte")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2114716903]
+libraries/ = SubResource("AnimationLibrary_sa2qs")
+
+[connection signal="destroyed" from="Destructible_Object" to="." method="_on_destructible_object_destroyed"]

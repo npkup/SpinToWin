@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://cmkjgd2kbxjq2"]
+
+[ext_resource type="Script" uid="uid://baqg21xop1vql" path="res://barrel.gd" id="1_6iawg"]
+[ext_resource type="ArrayMesh" uid="uid://bc4tkh5vgdpkx" path="res://barrel.res" id="1_n8un1"]
+[ext_resource type="Script" uid="uid://d2kxgyi3x8mjd" path="res://destructible_object.gd" id="2_rdxsi"]
+[ext_resource type="AudioStream" uid="uid://d4a4cs3xg1bbr" path="res://explosion.mp3" id="3_ygdis"]
+[ext_resource type="CylinderMesh" uid="uid://uxmcubaj8p3" path="res://spark.tres" id="4_ygdis"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rdxsi"]
+height = 0.5229187
+radius = 0.21826172
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3vxte"]
+height = 0.5229187
+radius = 0.30615234
+
+[sub_resource type="Animation" id="Animation_ygdis"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D2:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rdxsi"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D2:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygdis"]
+_data = {
+&"RESET": SubResource("Animation_ygdis"),
+&"explosion": SubResource("Animation_rdxsi")
+}
+
+[sub_resource type="Curve" id="Curve_rdxsi"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.08954782, 1), 0.0, 0.0, 0, 0, Vector2(0.50407535, 1), -1.1797025, -1.1797025, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_rdxsi"]
+curve = SubResource("Curve_rdxsi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5jsku"]
+spread = 180.0
+initial_velocity_min = 0.58
+initial_velocity_max = 0.84
+gravity = Vector3(0, 2, 0)
+scale_min = 0.7
+scale_max = 3.5
+scale_curve = SubResource("CurveTexture_rdxsi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0ajy"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.14, 0.14, 0.14, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3vxte"]
+material = SubResource("StandardMaterial3D_a0ajy")
+radius = 0.06
+height = 0.12
+radial_segments = 8
+rings = 4
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6iawg"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, -4.9, 0)
+scale_min = 3.0
+scale_max = 3.0
+
+[node name="Barrel" type="RigidBody3D" unique_id=770748373]
+collision_layer = 0
+script = ExtResource("1_6iawg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1144134345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28105164, 0)
+shape = SubResource("CylinderShape3D_rdxsi")
+
+[node name="Barrel" type="MeshInstance3D" parent="." unique_id=901038433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031973332, 0, 0.05058396)
+mesh = ExtResource("1_n8un1")
+
+[node name="Destructible_Object" type="Area3D" parent="." unique_id=1387750761 node_paths=PackedStringArray("object")]
+script = ExtResource("2_rdxsi")
+object = NodePath("..")
+knockback = 25.0
+destructible_sound = ExtResource("3_ygdis")
+cost = 75
+metadata/_custom_type_script = "uid://d2kxgyi3x8mjd"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Destructible_Object" unique_id=705801567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28105164, 0)
+shape = SubResource("CylinderShape3D_3vxte")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=600959644]
+libraries/ = SubResource("AnimationLibrary_ygdis")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=598009872]
+emitting = false
+amount = 16
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5jsku")
+draw_pass_1 = SubResource("SphereMesh_3vxte")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=247337900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38033473, 0)
+emitting = false
+amount = 48
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_6iawg")
+draw_pass_1 = ExtResource("4_ygdis")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=333243424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7343006, 0)
+light_color = Color(1, 0.9633333, 0.89, 1)
+light_energy = 0.0
+omni_range = 8.0
+
+[connection signal="destroyed" from="Destructible_Object" to="." method="_on_destructible_object_destroyed"]

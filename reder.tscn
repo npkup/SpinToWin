@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://clh4ip1ho4y6e"]
+
+[ext_resource type="PackedScene" uid="uid://1iyuac1gmgy5" path="res://terrain.tscn" id="1_2lev0"]
+[ext_resource type="PackedScene" uid="uid://cjebjy8ico3o0" path="res://my_guy.tscn" id="2_nxcjg"]
+[ext_resource type="PackedScene" uid="uid://bcdjerl5fjspx" path="res://sawblade.tscn" id="3_nxcjg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_glung"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_38jdj"]
+sky_material = SubResource("ProceduralSkyMaterial_glung")
+
+[sub_resource type="Environment" id="Environment_1eumv"]
+background_mode = 2
+sky = SubResource("Sky_38jdj")
+
+[node name="reder" type="Node3D" unique_id=675123000]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=125279432]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=686489580]
+environment = SubResource("Environment_1eumv")
+
+[node name="terrain" parent="." unique_id=1887053271 instance=ExtResource("1_2lev0")]
+
+[node name="uploads_files_7100999_MascularMale" parent="." unique_id=469709878 instance=ExtResource("2_nxcjg")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0.4730178, 3.633578, -6.9598618)
+
+[node name="sawblade" parent="." unique_id=677611315 instance=ExtResource("3_nxcjg")]
+transform = Transform3D(-4.371139e-09, 0.1, -4.371139e-09, 0, -4.371139e-09, -0.1, -0.1, -4.371139e-09, 1.9106854e-16, 0.5866852, 1.9616616, -5.6433587)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1571756711]
+transform = Transform3D(0.7647303, 0.13961303, 0.62904364, 0, 0.9762444, -0.21667247, -0.6443506, 0.165696, 0.74656355, 1.2086213, 1.9631498, -5.527984)

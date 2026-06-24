@@ -45,8 +45,30 @@ buffer = PackedFloat32Array(0.057337992, -0.0005718679, -0.057210382, -113.40922
 [sub_resource type="BoxMesh" id="BoxMesh_3shck"]
 size = Vector3(9.646, 1, 13.436)
 
+[sub_resource type="Gradient" id="Gradient_vivmo"]
+colors = PackedColorArray(0.65, 0.65, 0.65, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w48qg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ycdy4"]
+noise = SubResource("FastNoiseLite_w48qg")
+color_ramp = SubResource("Gradient_vivmo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg77c"]
+albedo_texture = SubResource("NoiseTexture2D_ycdy4")
+metallic = 0.53
+roughness = 0.47
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jsku"]
 albedo_texture = ExtResource("2_avahw")
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vxte"]
+size = Vector3(13.331055, 1, 10.47998)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0ajy"]
+albedo_color = Color(0.5228419, 0.52284193, 0.5228419, 1)
+albedo_texture = ExtResource("2_avahw")
+uv1_scale = Vector3(7.577, 7.577, 7.577)
 
 [node name="terrain" unique_id=1887053271 instance=ExtResource("1_206su")]
 
@@ -77,6 +99,7 @@ mesh = ExtResource("7_3shck")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="9" unique_id=138311515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47691464, 1.2956749, -11.248014)
 mesh = SubResource("BoxMesh_3shck")
+surface_material_override/0 = SubResource("StandardMaterial3D_dg77c")
 
 [node name="tabltop" type="MeshInstance3D" parent="." index="10" unique_id=1430865241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3644105, 2.1516628, -9.20796)
@@ -87,3 +110,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5jsku")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5552852, 2.1516628, -8.879303)
 mesh = ExtResource("9_1q4c8")
 surface_material_override/0 = ExtResource("10_lg7om")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="12" unique_id=823767623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.450756, 2.7018232, -11.335451)
+mesh = SubResource("BoxMesh_3vxte")
+surface_material_override/0 = SubResource("StandardMaterial3D_a0ajy")
