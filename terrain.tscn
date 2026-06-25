@@ -20,7 +20,7 @@ albedo_texture = ExtResource("2_avahw")
 noise = SubResource("FastNoiseLite_h2lqh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0u6kl"]
-albedo_color = Color(0.052927062, 0.120958336, 0.03434389, 1)
+albedo_color = Color(0.050980393, 0.12156863, 0.03529412, 1)
 albedo_texture = SubResource("NoiseTexture2D_3shck")
 uv1_triplanar = true
 

@@ -9,5 +9,5 @@ func _ready() -> void:
 	await $Retry.pressed
 	Global.total_destruction = 0
 	$"../AnimationPlayer".play("RESET")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1.5).timeout
 	get_tree().reload_current_scene()

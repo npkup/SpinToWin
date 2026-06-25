@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dltg5wynycngj"
+path="res://.godot/imported/Samuel Barber - Adagio for Strings.mp3-aba740aba1c90ffece548dda2ee9610a.mp3str"
+
+[deps]
+
+source_file="res://Samuel Barber - Adagio for Strings.mp3"
+dest_files=["res://.godot/imported/Samuel Barber - Adagio for Strings.mp3-aba740aba1c90ffece548dda2ee9610a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

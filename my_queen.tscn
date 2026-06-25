@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chlea4xanndw4" path="res://my_queen.gd" id="1_f6ev3"]
 [ext_resource type="PackedScene" uid="uid://cjebjy8ico3o0" path="res://my_guy.tscn" id="1_kgf2h"]
+[ext_resource type="AudioStream" uid="uid://d3hrl1j6522si" path="res://sandwalk.mp3" id="3_l7voo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vxte"]
 radius = 0.4
@@ -93,5 +94,12 @@ shape = SubResource("BoxShape3D_3vxte")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=34210009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24918815, 0.6129061)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1077467837]
+stream = ExtResource("3_l7voo")
+volume_db = -3.106
+max_distance = 30.0
+panning_strength = 3.0
+parameters/looping = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

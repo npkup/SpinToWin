@@ -8,10 +8,13 @@
 [ext_resource type="Shape3D" uid="uid://c84uh1tvnu2mh" path="res://new_concave_polygon_shape_3d.res" id="2_lquwl"]
 [ext_resource type="Shape3D" uid="uid://dpaw84jjpq61f" path="res://houzpolycolider.tres" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cmkjgd2kbxjq2" path="res://barrel.tscn" id="3_dg77c"]
+[ext_resource type="PackedScene" uid="uid://bdaxnye3flr82" path="res://lamp.tscn" id="4_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dwowpbq351nnx" path="res://my_queen.tscn" id="5_lquwl"]
 [ext_resource type="Shader" uid="uid://c8amwtkt06igb" path="res://blur.gdshader" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://ct04yvagq2nny" path="res://gamover_menu.gd" id="9_4c57u"]
 [ext_resource type="Script" uid="uid://rw4ws13bykoi" path="res://cool_button.gd" id="9_kek77"]
+[ext_resource type="AudioStream" uid="uid://bd3i64vw6sc1a" path="res://gong.mp3" id="13_w48qg"]
+[ext_resource type="AudioStream" uid="uid://c7ubtu8ujtgqg" path="res://5-4-amzn.mp3" id="13_ycdy4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,14 +48,14 @@ radius = 0.1
 offsets = PackedFloat32Array(0, 0.7514604, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.634584, 1, 1, 1, 0.5137255)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_kek77"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dg77c"]
 gradient = SubResource("Gradient_7mycd")
 
 [sub_resource type="Curve" id="Curve_h2yge"]
 _data = [Vector2(0, 0.09943366), 0.0, 0.0, 0, 0, Vector2(0.70064765, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_0xm2m"]
+[sub_resource type="CurveTexture" id="CurveTexture_ycdy4"]
 curve = SubResource("Curve_h2yge")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3vxte"]
@@ -69,17 +72,17 @@ initial_velocity_max = 0.39999998
 gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 scale_max = 0.5
-scale_curve = SubResource("CurveTexture_0xm2m")
-color_ramp = SubResource("GradientTexture1D_kek77")
+scale_curve = SubResource("CurveTexture_ycdy4")
+color_ramp = SubResource("GradientTexture1D_dg77c")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
 transparency = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.34, 0.23981334, 0.1632, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_a0ajy"]
 lightmap_size_hint = Vector2i(3, 2)
-material = SubResource("StandardMaterial3D_272bh")
+material = SubResource("StandardMaterial3D_w48qg")
 radius = 0.05
 height = 0.1
 radial_segments = 10
@@ -501,6 +504,78 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0509, -0.7288968, -10.167
 [node name="Barrel24" parent="DestructibleObjects" unique_id=1477888851 instance=ExtResource("3_dg77c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.742739, -0.7288968, -12.332035)
 
+[node name="Lamp" parent="DestructibleObjects" unique_id=1703723971 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1477107, 0)
+
+[node name="Lamp2" parent="DestructibleObjects" unique_id=275738606 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54607594, 7.786498)
+
+[node name="Lamp3" parent="DestructibleObjects" unique_id=1297683679 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.727227, 2.8176727, 16.813633)
+
+[node name="Lamp4" parent="DestructibleObjects" unique_id=504429598 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5041478, 3.3274446, 24.97475)
+
+[node name="Lamp5" parent="DestructibleObjects" unique_id=1650815212 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.949128, 2.1900024, 27.955406)
+
+[node name="Lamp6" parent="DestructibleObjects" unique_id=1626162300 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.67083, 1.899045, 27.955406)
+
+[node name="Lamp7" parent="DestructibleObjects" unique_id=1904853852 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.67083, 0.54959154, 19.148352)
+
+[node name="Lamp8" parent="DestructibleObjects" unique_id=1337287895 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.731133, -0.3062775, 13.092824)
+
+[node name="Lamp9" parent="DestructibleObjects" unique_id=2080267708 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.050607, -1.1594491, 6.0707107)
+
+[node name="Lamp10" parent="DestructibleObjects" unique_id=160814340 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.318066, -1.3535347, -0.11526251)
+
+[node name="Lamp11" parent="DestructibleObjects" unique_id=1544790860 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.318066, -0.5624635, -10.569534)
+
+[node name="Lamp12" parent="DestructibleObjects" unique_id=905898316 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.184357, -0.5547669, -16.859243)
+
+[node name="Lamp13" parent="DestructibleObjects" unique_id=808444267 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7361336, -1.6647861, -16.859243)
+
+[node name="Lamp14" parent="DestructibleObjects" unique_id=1643963057 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7361336, 0.46108556, -26.164438)
+
+[node name="Lamp15" parent="DestructibleObjects" unique_id=774694462 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.762686, 1.0130546, -26.164438)
+
+[node name="Lamp16" parent="DestructibleObjects" unique_id=1529954741 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.051952, 1.2795846, -29.281578)
+
+[node name="Lamp17" parent="DestructibleObjects" unique_id=1141888731 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8777442, 1.0498645, -29.281578)
+
+[node name="Lamp18" parent="DestructibleObjects" unique_id=1515886023 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.531914, 1.3891027, -29.281578)
+
+[node name="Lamp19" parent="DestructibleObjects" unique_id=1327441160 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.220852, 0.84810853, -24.796732)
+
+[node name="Lamp20" parent="DestructibleObjects" unique_id=70728849 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.812382, -0.9468595, -19.828072)
+
+[node name="Lamp21" parent="DestructibleObjects" unique_id=1707894042 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3712635, -1.6926666, -13.800872)
+
+[node name="Lamp22" parent="DestructibleObjects" unique_id=1971731289 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3712635, -1.4377536, -8.627478)
+
+[node name="Lamp23" parent="DestructibleObjects" unique_id=474184580 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3712635, -0.48258227, -2.659021)
+
+[node name="Lamp24" parent="DestructibleObjects" unique_id=2953991 instance=ExtResource("4_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2931237, 0.3418839, 2.017981)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1997666763]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
@@ -560,7 +635,7 @@ target_position = Vector3(1, 0.75, 0)
 hit_from_inside = true
 
 [node name="Camera3D" type="Camera3D" parent="player/RayCast3D" unique_id=1558790501]
-transform = Transform3D(-4.371139e-08, -0.42261824, 0.9063077, 0, 0.9063077, 0.42261824, -1, 1.847323e-08, -3.9615966e-08, 1, 0.75, 0)
+transform = Transform3D(-4.371139e-08, -0.21814322, 0.9759167, 0, 0.9759167, 0.21814322, -1, 9.535343e-09, -4.2658673e-08, 1, 0.75, 0)
 fov = 120.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="player" unique_id=1550224965]
@@ -593,7 +668,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="player/SubViewportContainer/SubViewport" unique_id=821853477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -4.110088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -6.6550083)
 
 [node name="hi" parent="." unique_id=1848445595 node_paths=PackedStringArray("target") instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2172503, -1.1288506, -8.693717)
@@ -692,6 +767,8 @@ text = "Retry"
 script = ExtResource("9_kek77")
 size_increase_ease_type = 2
 size_decrease_ease_type = 2
+press_sound = ExtResource("13_w48qg")
+press_sound_volume_db = -21.0
 metadata/_custom_type_script = "uid://rw4ws13bykoi"
 
 [node name="Label2" type="Label" parent="Control/Panel" unique_id=458152235]
@@ -747,3 +824,8 @@ autoplay = &"starting_cutscene"
 
 [node name="cutscen" type="Camera3D" parent="." unique_id=1090819829]
 transform = Transform3D(0.93728197, 0, -0.34857205, 0, 1, 0, 0.34857205, 0, 0.93728197, 0.049990118, -1.4700538, -6.4710593)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1628335119]
+stream = ExtResource("13_ycdy4")
+autoplay = true
+parameters/looping = true

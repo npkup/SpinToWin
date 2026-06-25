@@ -8,10 +8,10 @@ var target_global_transform : Transform3D
 
 func _physics_process(delta: float) -> void:
 	var move_speed : float = $sawblade.rotation_speed * 2*PI * ((1.0/8.0) / 2.5) * -((global_position.y / 16) + -2)
-	$"../Speed".text = "Speed = " + str(move_speed)
+	$"../Speed".text = "Speed = " + str(round(move_speed * 10) / 10) + "m/s"
 	$"../Control/Label2".text = "Value of property destroyed = $" + str(Global.total_destruction)
-	$RayCast3D/Camera3D.fov = 90 * move_speed / 10
-	$RayCast3D/Camera3D.fov = clamp($RayCast3D/Camera3D.fov, 50, 110)
+	$RayCast3D/Camera3D.fov = clamp(round(90 * move_speed / 10), 60, 179)
+	$RayCast3D/Camera3D.fov = clamp($RayCast3D/Camera3D.fov, 60, 110)
 	$RayCast3D/Camera3D.global_position.y = global_position.y + 0.75 * move_speed / 5
 	if $RayCast3D.get_collider() is PhysicsBody3D:
 		$RayCast3D/Camera3D.global_position = $RayCast3D.get_collision_point()
@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		rotational_velocity = move_toward(rotational_velocity, 0, delta * 6)
 		rotation_degrees.x = lerp(rotation_degrees.x, 0.0, 0.01)
 	$RayCast3D/Camera3D.global_rotation.z = 0
-	$RayCast3D/Camera3D.global_rotation_degrees.x = -25
+	$RayCast3D/Camera3D.global_rotation_degrees.x = -12.6
 	rotate(Vector3(0, 1, 0), rotational_velocity * delta)
 	if is_on_floor():
 		velocity.y = 0
