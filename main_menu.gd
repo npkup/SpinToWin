@@ -11,3 +11,11 @@ func _on_cool_button_pressed() -> void:
 	$AnimationPlayer.play("start")
 	await get_tree().create_timer(6).timeout
 	get_tree().change_scene_to_file("res://cuhscene.tscn")
+
+
+func _on_cool_button_2_pressed() -> void:
+	$Panel/AnimationPlayer.play("aprear")
+
+
+func _on_cool_button_close_pressed() -> void:
+	$Panel/AnimationPlayer.play_backwards("aprear")

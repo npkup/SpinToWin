@@ -9,8 +9,13 @@ extends CharacterBody3D
 			$AudioStreamPlayer3D.stop()
 		enabled = value
 var chasing : bool = true
+@export var muted : bool = false
 
 func _physics_process(_delta: float) -> void:
+	if muted:
+		$AudioStreamPlayer3D.volume_linear = 0
+	else:
+		$AudioStreamPlayer3D.volume_db = -3
 	if enabled:
 		$AnimationPlayer.play("walk")
 		var direction : Vector3 = global_position.direction_to(target.global_position)
