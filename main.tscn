@@ -761,7 +761,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="player/SubViewportContainer/SubViewport" unique_id=821853477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -7.261749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -4.110088)
 
 [node name="RayCast3D2" type="RayCast3D" parent="player" unique_id=1970236734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022752047, 0)

@@ -4,8 +4,13 @@
 [ext_resource type="Script" uid="uid://l7lmln0i28l7" path="res://sawblade.gd" id="2_6alnm"]
 [ext_resource type="Material" uid="uid://b6khmw62igiv8" path="res://metal.tres" id="2_grbjo"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6alnm"]
-albedo_color = Color(0.53, 0.53, 0.53, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkun8"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grbjo"]
 metallic = 1.0
 roughness = 0.0
 
@@ -14,10 +19,8 @@ transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.1, 0, 0.1, -4.371139e-09
 script = ExtResource("2_6alnm")
 rotation_speed = 0.938
 
-[node name="Cylinder" parent="." index="0" unique_id=228070071]
-transform = Transform3D(0.8509866, 0, -0.5258264, 0, 1, 0, 0.5258264, 0, 0.8509866, 0, 0, 0)
+[node name="Cube" parent="." index="0" unique_id=897208286]
+transform = Transform3D(0.30047753, 0, -0.9542985, 0, 1, 0, 0.9542985, 0, 0.30047753, 0, 0, 0)
+material_overlay = SubResource("StandardMaterial3D_gkun8")
 surface_material_override/0 = ExtResource("2_grbjo")
-
-[node name="Cube" parent="." index="1" unique_id=1784416193]
-transform = Transform3D(0.8509866, 0, -0.5258264, 0, 1, 0, 0.5258264, 0, 0.8509866, 0, 0, 0)
-surface_material_override/0 = SubResource("StandardMaterial3D_6alnm")
+surface_material_override/1 = SubResource("StandardMaterial3D_grbjo")

@@ -259,7 +259,7 @@ light_energy = 1.443
 shadow_enabled = true
 
 [node name="sawblade" parent="SubViewportContainer/SubViewport/3D" unique_id=677611315 instance=ExtResource("3_fu7sn")]
-transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.1, 0, 0.1, -4.371139e-09, 0, 0.61274177, 0.8304064)
+transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.1, 0, 0.1, -4.371139e-09, 0, 0.62015736, 0.8304064)
 rotation_speed = 3.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="SubViewportContainer/SubViewport/3D" unique_id=182627953]
