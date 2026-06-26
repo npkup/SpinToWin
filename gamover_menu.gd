@@ -1,6 +1,8 @@
 extends Panel
 
 func _ready() -> void:
+	await get_tree().create_timer(3).timeout
+	$"../AnimationPlayer2".play("tutorial")
 	await Global.game_over
 	$Label2.text = "You destroyed $" + str(Global.total_destruction) + " worth of property"
 	if Global.total_destruction > 200:

@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://r7obtpqow46x" path="res://tayble_top.res" id="8_xo2vs"]
 [ext_resource type="ArrayMesh" uid="uid://ouxqvcyjnbbc" path="res://tayble_feet.res" id="9_1q4c8"]
 [ext_resource type="Material" uid="uid://b6khmw62igiv8" path="res://metal.tres" id="10_lg7om"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b27dcfo01f2pv" path="res://terrain.occ" id="11_1q4c8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vxte"]
 albedo_texture = ExtResource("2_avahw")
@@ -70,6 +71,13 @@ albedo_color = Color(0.5228419, 0.52284193, 0.5228419, 1)
 albedo_texture = ExtResource("2_avahw")
 uv1_scale = Vector3(7.577, 7.577, 7.577)
 
+[sub_resource type="BoxMesh" id="BoxMesh_5jsku"]
+size = Vector3(1, 0.34179688, 7.3808594)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5vcq"]
+albedo_texture = ExtResource("2_avahw")
+uv1_triplanar = true
+
 [node name="terrain" unique_id=1887053271 instance=ExtResource("1_206su")]
 
 [node name="fenc_001" parent="." index="0" unique_id=23189842]
@@ -115,3 +123,11 @@ surface_material_override/0 = ExtResource("10_lg7om")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.450756, 2.7018232, -11.335451)
 mesh = SubResource("BoxMesh_3vxte")
 surface_material_override/0 = SubResource("StandardMaterial3D_a0ajy")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="13" unique_id=2074263849]
+occluder = ExtResource("11_1q4c8")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="14" unique_id=701870311]
+transform = Transform3D(1, 0, 0, 0, 0.8589599, -0.5120429, 0, 0.5120429, 0.8589599, 0.9868882, 2.282229, -5.2236705)
+mesh = SubResource("BoxMesh_5jsku")
+surface_material_override/0 = SubResource("StandardMaterial3D_e5vcq")

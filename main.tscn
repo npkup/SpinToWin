@@ -9,10 +9,13 @@
 [ext_resource type="Shape3D" uid="uid://dpaw84jjpq61f" path="res://houzpolycolider.tres" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cmkjgd2kbxjq2" path="res://barrel.tscn" id="3_dg77c"]
 [ext_resource type="PackedScene" uid="uid://bdaxnye3flr82" path="res://lamp.tscn" id="4_vivmo"]
+[ext_resource type="PackedScene" uid="uid://dkoai8pmgs1q5" path="res://vase.tscn" id="5_074og"]
 [ext_resource type="PackedScene" uid="uid://dwowpbq351nnx" path="res://my_queen.tscn" id="5_lquwl"]
 [ext_resource type="Shader" uid="uid://c8amwtkt06igb" path="res://blur.gdshader" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://ct04yvagq2nny" path="res://gamover_menu.gd" id="9_4c57u"]
 [ext_resource type="Script" uid="uid://rw4ws13bykoi" path="res://cool_button.gd" id="9_kek77"]
+[ext_resource type="FontFile" uid="uid://q5wdglpo1gvp" path="res://Source_Serif_4/static/SourceSerif4-ExtraLight.ttf" id="11_2cqfq"]
+[ext_resource type="FontFile" uid="uid://bpl6bhi3pi01" path="res://Source_Serif_4/static/SourceSerif4-Light.ttf" id="12_yaehf"]
 [ext_resource type="AudioStream" uid="uid://bd3i64vw6sc1a" path="res://gong.mp3" id="13_w48qg"]
 [ext_resource type="AudioStream" uid="uid://c7ubtu8ujtgqg" path="res://5-4-amzn.mp3" id="13_ycdy4"]
 
@@ -40,9 +43,12 @@ data = PackedVector3Array(-4.823, 0.5, 6.718, 4.823, 0.5, 6.718, -4.823, -0.5, 6
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dg77c"]
 data = PackedVector3Array(-6.6654997, 0.5, 5.24, 6.6654997, 0.5, 5.24, -6.6654997, -0.5, 5.24, 6.6654997, 0.5, 5.24, 6.6654997, -0.5, 5.24, -6.6654997, -0.5, 5.24, 6.6654997, 0.5, -5.24, -6.6654997, 0.5, -5.24, 6.6654997, -0.5, -5.24, -6.6654997, 0.5, -5.24, -6.6654997, -0.5, -5.24, 6.6654997, -0.5, -5.24, 6.6654997, 0.5, 5.24, 6.6654997, 0.5, -5.24, 6.6654997, -0.5, 5.24, 6.6654997, 0.5, -5.24, 6.6654997, -0.5, -5.24, 6.6654997, -0.5, 5.24, -6.6654997, 0.5, -5.24, -6.6654997, 0.5, 5.24, -6.6654997, -0.5, -5.24, -6.6654997, 0.5, 5.24, -6.6654997, -0.5, 5.24, -6.6654997, -0.5, -5.24, 6.6654997, 0.5, 5.24, -6.6654997, 0.5, 5.24, 6.6654997, 0.5, -5.24, -6.6654997, 0.5, 5.24, -6.6654997, 0.5, -5.24, 6.6654997, 0.5, -5.24, -6.6654997, -0.5, 5.24, 6.6654997, -0.5, 5.24, -6.6654997, -0.5, -5.24, 6.6654997, -0.5, 5.24, 6.6654997, -0.5, -5.24, -6.6654997, -0.5, -5.24)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_074og"]
+data = PackedVector3Array(-0.5, 0.1709, 3.6904, 0.5, 0.1709, 3.6904, -0.5, -0.1709, 3.6904, 0.5, 0.1709, 3.6904, 0.5, -0.1709, 3.6904, -0.5, -0.1709, 3.6904, 0.5, 0.1709, -3.6904, -0.5, 0.1709, -3.6904, 0.5, -0.1709, -3.6904, -0.5, 0.1709, -3.6904, -0.5, -0.1709, -3.6904, 0.5, -0.1709, -3.6904, 0.5, 0.1709, 3.6904, 0.5, 0.1709, -3.6904, 0.5, -0.1709, 3.6904, 0.5, 0.1709, -3.6904, 0.5, -0.1709, -3.6904, 0.5, -0.1709, 3.6904, -0.5, 0.1709, -3.6904, -0.5, 0.1709, 3.6904, -0.5, -0.1709, -3.6904, -0.5, 0.1709, 3.6904, -0.5, -0.1709, 3.6904, -0.5, -0.1709, -3.6904, 0.5, 0.1709, 3.6904, -0.5, 0.1709, 3.6904, 0.5, 0.1709, -3.6904, -0.5, 0.1709, 3.6904, -0.5, 0.1709, -3.6904, 0.5, 0.1709, -3.6904, -0.5, -0.1709, 3.6904, 0.5, -0.1709, 3.6904, -0.5, -0.1709, -3.6904, 0.5, -0.1709, 3.6904, 0.5, -0.1709, -3.6904, -0.5, -0.1709, -3.6904)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3vxte"]
 height = 0.07
-radius = 0.1
+radius = 0.106
 
 [sub_resource type="Gradient" id="Gradient_7mycd"]
 offsets = PackedFloat32Array(0, 0.7514604, 1)
@@ -87,6 +93,23 @@ radius = 0.05
 height = 0.1
 radial_segments = 10
 rings = 10
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yaehf"]
+emission_shape_scale = Vector3(0.03, 0.03, 0.03)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -720.0
+angle_max = 720.0
+use_rotation_3d = true
+rotation_3d_min = Vector3(-180.318, 0, 0)
+rotation_3d_max = Vector3(180, 0, 0)
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 0.39999998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.29999998
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_ycdy4")
+color_ramp = SubResource("GradientTexture1D_dg77c")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3vxte"]
 shader = ExtResource("8_5vw27")
@@ -155,6 +178,67 @@ _data = {
 &"gameover": SubResource("Animation_4c57u")
 }
 
+[sub_resource type="Animation" id="Animation_yaehf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Destroy as much of james' property as possible"]
+}
+
+[sub_resource type="Animation" id="Animation_074og"]
+resource_name = "tutorial"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 8.8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Press \"A\" to turn left and \"D\" to turn right", "Destroy as much of James' property as possible", "Press left arrow or right arrow to turn the camera without turning the player"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cegan"]
+_data = {
+&"RESET": SubResource("Animation_yaehf"),
+&"tutorial": SubResource("Animation_074og")
+}
+
 [sub_resource type="Animation" id="Animation_efxa6"]
 length = 0.001
 tracks/0/type = "value"
@@ -196,34 +280,22 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Label:modulate")
+tracks/3/path = NodePath("player:enabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("player:enabled")
+tracks/4/path = NodePath("hi:enabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("hi:enabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -312,34 +384,22 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Control/Label:modulate")
+tracks/6/path = NodePath("player:enabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(-0.099999905, 0, 0.10000014, 2.7000003, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("player:enabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 3.9),
+"times": PackedFloat32Array(0, 3.4333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath(".")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0.2086),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -576,6 +636,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3712635, -0.48258227, -2.
 [node name="Lamp24" parent="DestructibleObjects" unique_id=2953991 instance=ExtResource("4_vivmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2931237, 0.3418839, 2.017981)
 
+[node name="Vase" parent="DestructibleObjects" unique_id=1970369995 instance=ExtResource("5_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.284727, 9.90936, 24.396084)
+
+[node name="Vase2" parent="DestructibleObjects" unique_id=1926936761 instance=ExtResource("5_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.708525, 3.8631773, 21.704823)
+
+[node name="Vase3" parent="DestructibleObjects" unique_id=1730513898 instance=ExtResource("5_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.708525, 3.4414735, -13.287109)
+
+[node name="Vase4" parent="DestructibleObjects" unique_id=111833424 instance=ExtResource("5_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.566162, 0.28996664, -13.287109)
+
+[node name="Vase5" parent="DestructibleObjects" unique_id=1136135427 instance=ExtResource("5_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0056205, 0.12298994, -8.869466)
+
+[node name="Vase6" parent="DestructibleObjects" unique_id=903907492 instance=ExtResource("5_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.059153, 0.12298994, -8.739007)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1997666763]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
@@ -613,11 +691,18 @@ shape = SubResource("ConcavePolygonShape3D_4c57u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.450756, 2.7018232, -11.335451)
 shape = SubResource("ConcavePolygonShape3D_dg77c")
 
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D" unique_id=1290110104]
+transform = Transform3D(1, 0, 0, 0, 0.8589599, -0.5120429, 0, 0.5120429, 0.8589599, 0.9868882, 2.282229, -5.2236705)
+shape = SubResource("ConcavePolygonShape3D_074og")
+
 [node name="player" type="CharacterBody3D" parent="." unique_id=43331874 node_paths=PackedStringArray("sawblade")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3443818, -1.9238312, -5.2713966)
 floor_snap_length = 23.03
 script = ExtResource("1_0xm2m")
 sawblade = NodePath("sawblade")
+camera_lean_meters = 0.1
+camera_lean_speed = 0.005
+camera_rotate_speed = 0.05
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="player" unique_id=1224601495]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1613088, 0.6759785, 0)
@@ -641,8 +726,16 @@ fov = 120.0
 [node name="GPUParticles3D" type="GPUParticles3D" parent="player" unique_id=1550224965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103, 0)
 amount = 64
-speed_scale = 3.0
+speed_scale = 5.0
 process_material = SubResource("ParticleProcessMaterial_3vxte")
+draw_pass_1 = SubResource("SphereMesh_a0ajy")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="player" unique_id=104223019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103, 0)
+amount = 64
+lifetime = 0.37
+speed_scale = 4.99
+process_material = SubResource("ParticleProcessMaterial_yaehf")
 draw_pass_1 = SubResource("SphereMesh_a0ajy")
 
 [node name="ColorRect" type="ColorRect" parent="player" unique_id=816048674]
@@ -668,7 +761,11 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="player/SubViewportContainer/SubViewport" unique_id=821853477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -4.110088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -7.261749)
+
+[node name="RayCast3D2" type="RayCast3D" parent="player" unique_id=1970236734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022752047, 0)
+target_position = Vector3(-0.2, 0, 0)
 
 [node name="hi" parent="." unique_id=1848445595 node_paths=PackedStringArray("target") instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2172503, -1.1288506, -8.693717)
@@ -676,19 +773,27 @@ collision_layer = 0
 target = NodePath("../player")
 
 [node name="Rearview" type="Label" parent="." unique_id=1998182403]
-offset_left = 4.0
-offset_top = 185.0
-offset_right = 80.0
-offset_bottom = 208.0
-theme_override_constants/outline_size = 8
+offset_left = 128.0
+offset_top = 162.0
+offset_right = 193.0
+offset_bottom = 182.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("11_2cqfq")
+theme_override_font_sizes/font_size = 15
 text = "Rear view"
 
 [node name="Speed" type="Label" parent="." unique_id=856080196]
-offset_left = 4.0
-offset_top = 209.0
-offset_right = 80.0
-offset_bottom = 232.0
-theme_override_constants/outline_size = 8
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -646.0
+offset_right = 72.0
+offset_bottom = -626.0
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("12_yaehf")
+theme_override_font_sizes/font_size = 14
 text = "Rear view"
 
 [node name="Control" type="Control" parent="." unique_id=1695137225]
@@ -800,8 +905,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 11
 theme_override_font_sizes/font_size = 24
-text = "Press \"A\" and \"D\" to steer the sawblade
-Destroy as much of james' property as possible"
+text = "Destroy as much of james' property as possible"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -815,8 +919,13 @@ offset_top = 8.0
 offset_right = 38.0
 offset_bottom = 31.0
 grow_horizontal = 2
-theme_override_constants/outline_size = 8
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("12_yaehf")
+theme_override_font_sizes/font_size = 20
 text = "Value of property destroyed = "
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Control" unique_id=584534033]
+libraries/ = SubResource("AnimationLibrary_cegan")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=676702208]
 libraries/ = SubResource("AnimationLibrary_ycdy4")

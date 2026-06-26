@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d2kxgyi3x8mjd" path="res://destructible_object.gd" id="2_rdxsi"]
 [ext_resource type="AudioStream" uid="uid://d4a4cs3xg1bbr" path="res://explosion.mp3" id="3_ygdis"]
 [ext_resource type="CylinderMesh" uid="uid://uxmcubaj8p3" path="res://spark.tres" id="4_ygdis"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dlh3w26wacxet" path="res://barrel.occ" id="6_43c1c"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rdxsi"]
 height = 0.5229187
@@ -186,5 +187,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7343006, 0)
 light_color = Color(1, 0.9633333, 0.89, 1)
 light_energy = 0.0
 omni_range = 8.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1460112365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26947677, 0)
+occluder = ExtResource("6_43c1c")
 
 [connection signal="destroyed" from="Destructible_Object" to="." method="_on_destructible_object_destroyed"]

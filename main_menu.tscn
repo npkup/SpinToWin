@@ -34,7 +34,7 @@ sky_material = SubResource("ProceduralSkyMaterial_7vrkn")
 
 [sub_resource type="Environment" id="Environment_jix8l"]
 background_mode = 2
-background_energy_multiplier = 0.1
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_fu7sn")
 
 [sub_resource type="Gradient" id="Gradient_fu7sn"]
@@ -105,7 +105,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0k4wn"]
 resource_name = "aprear"
-length = 0.39999999999999997
+length = 0.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -117,7 +117,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(-0.008333334, 0.4),
 "transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [Vector2(378, 677), Vector2(378, 28)]
+"values": [Vector2(224, 677), Vector2(224, 28)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j5v2v"]
@@ -254,7 +254,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7492, 1.5252132)
 environment = SubResource("Environment_jix8l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/3D" unique_id=359038839]
-transform = Transform3D(0.47466576, -0.76224625, 0.44008294, 1.37575125e-08, 0.4999999, 0.86602545, -0.88016605, -0.41107264, 0.23733285, 0.5399476, 1.1278777, 0)
+transform = Transform3D(0.35753447, -0.8087811, 0.46694985, -3.8862957e-10, 0.49999994, 0.8660255, -0.93389994, -0.30963397, 0.1787672, 0.5399476, 1.1278777, 0.06350118)
 light_energy = 1.443
 shadow_enabled = true
 
@@ -325,8 +325,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -198.0
 offset_top = 353.0
-offset_right = 198.0
-offset_bottom = 990.99976
+offset_right = 504.00098
+offset_bottom = 991.0001
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -354,14 +354,15 @@ theme_override_font_sizes/font_size = 32
 text = "Credits"
 
 [node name="Label2" type="Label" parent="Panel" unique_id=256374941]
-custom_maximum_size = Vector2(348, 536)
+custom_maximum_size = Vector2(640, 640)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 102.0
-offset_right = -24.0
+offset_left = 31.0
+offset_top = 161.0
+offset_right = -31.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("8_8qtwp")
@@ -373,7 +374,12 @@ Intro cutscene music - Stereo Color
 Chicken model - bptom
 Chicken sounds - freesound community
 blade slash sound - DRAGON STUDIO
-Main menu music (Adagio for strings) - Samuel barber"
+Vase model - ardis rai
+Main menu music (Adagio for strings) - Samuel barber
+
+[The following assests were made by me]
+
+Sawblade mesh, main music and the terrain"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -389,9 +395,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -90.0
-offset_top = -179.54065
+offset_top = -219.54065
 offset_right = 90.0
-offset_bottom = -124.45935
+offset_bottom = -164.45935
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_jix8l")

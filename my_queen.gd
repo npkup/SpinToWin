@@ -42,6 +42,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player and enabled:
 		chasing = false
 		enabled = false
+		body.captured = true
 		body.sawblade.rotation_speed = 0
 		body.enabled = false
 		body.target_global_transform = $Marker3D.global_transform

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c5l5ky77sk2vh" path="res://lamp.gd" id="1_qfipa"]
 [ext_resource type="Script" uid="uid://d2kxgyi3x8mjd" path="res://destructible_object.gd" id="2_vxcd3"]
 [ext_resource type="AudioStream" uid="uid://caaefh0d63dtd" path="res://metal.mp3" id="3_qfipa"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bhmsf7qiqbv0x" path="res://lamp.occ" id="5_00ij4"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3vxte"]
 height = 1.8662109
@@ -35,5 +36,9 @@ metadata/_custom_type_script = "uid://d2kxgyi3x8mjd"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Destructible_Object" unique_id=712495918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90930176, 0)
 shape = SubResource("CylinderShape3D_5jsku")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=18578679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9097179, 0)
+occluder = ExtResource("5_00ij4")
 
 [connection signal="destroyed" from="Destructible_Object" to="." method="_on_destructible_object_destroyed"]
