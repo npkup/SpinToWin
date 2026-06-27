@@ -33,6 +33,9 @@ fog_enabled = true
 fog_mode = 1
 fog_density = 0.9964
 fog_depth_curve = 1.7674624
+adjustment_enabled = true
+adjustment_contrast = 1.14
+adjustment_saturation = 1.18
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vxte"]
 size = Vector3(1, 11.734, 253.317)
