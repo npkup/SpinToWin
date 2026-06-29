@@ -3,8 +3,14 @@ extends RigidBody3D
 var timer : float = 0
 var next_time_turning : float = randi_range(1, 4)
 
+@export var is_for_shader_fix : bool = false
+
 func _ready() -> void:
 	rotation_degrees.y = randi_range(-180, 180)
+	$MeshInstance3D.visible = !is_for_shader_fix
+	$GPUParticles3D.emitting = is_for_shader_fix
+	await get_tree().create_timer(0.5).timeout
+	queue_free()
 
 func _physics_process(delta: float) -> void:
 	timer += delta

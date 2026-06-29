@@ -73,9 +73,6 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 angle_min = -720.0
 angle_max = 720.0
-use_rotation_3d = true
-rotation_3d_min = Vector3(-180.318, 0, 0)
-rotation_3d_max = Vector3(180, 0, 0)
 direction = Vector3(0, 1, 0)
 initial_velocity_max = 0.39999998
 gravity = Vector3(0, 0, 0)
@@ -103,9 +100,6 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 angle_min = -720.0
 angle_max = 720.0
-use_rotation_3d = true
-rotation_3d_min = Vector3(-180.318, 0, 0)
-rotation_3d_max = Vector3(180, 0, 0)
 direction = Vector3(0, 1, 0)
 initial_velocity_max = 0.39999998
 gravity = Vector3(0, 0, 0)
@@ -304,6 +298,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/ColorRect2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_dg77c"]
 resource_name = "starting_cutscene"
@@ -315,7 +321,7 @@ tracks/0/path = NodePath("hi:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.1333334, 2.4333334),
+"times": PackedFloat32Array(2.6333334, 2.9333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(2.2172503, -1.1288506, -10.2971325), Vector3(2.2172503, -1.1288506, -8.693717)]
@@ -327,7 +333,7 @@ tracks/1/path = NodePath("hi:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.1333334, 2.4333334),
+"times": PackedFloat32Array(2.6333334, 2.9333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -339,7 +345,7 @@ tracks/2/path = NodePath("hi:enabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.99),
+"times": PackedFloat32Array(0.5, 3.49),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -365,7 +371,7 @@ tracks/4/path = NodePath("player:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0333333, 1.7333333, 3),
+"times": PackedFloat32Array(0.5333333, 2.2333333, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(2.3443818, -1.9238312, -8.423058), Vector3(2.3443818, -1.9238312, -5.2713966), Vector3(2.3443818, -1.9238312, -5.2713966)]
@@ -377,7 +383,7 @@ tracks/5/path = NodePath("player/RayCast3D/Camera3D")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(2.6666667),
+"times": PackedFloat32Array(3.1666667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -391,7 +397,7 @@ tracks/6/path = NodePath("player:enabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 3.4333334),
+"times": PackedFloat32Array(0.5, 3.9333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -403,12 +409,24 @@ tracks/7/path = NodePath(".")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.2086),
+"times": PackedFloat32Array(0.7086),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_reset_destruction"
 }]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/ColorRect2:color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ycdy4"]
@@ -698,6 +716,18 @@ shape = SubResource("ConcavePolygonShape3D_dg77c")
 transform = Transform3D(1, 0, 0, 0, 0.8589599, -0.5120429, 0, 0.5120429, 0.8589599, 0.9868882, 2.282229, -5.2236705)
 shape = SubResource("ConcavePolygonShape3D_074og")
 
+[node name="Chicken" parent="StaticBody3D" unique_id=1602484048 instance=ExtResource("2_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8801205, 2.2812037, -8.609975)
+is_for_shader_fix = true
+
+[node name="Vase" parent="StaticBody3D" unique_id=943909915 instance=ExtResource("5_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80124295, 2.2812037, -8.609975)
+is_for_shader_fix = true
+
+[node name="Barrel" parent="StaticBody3D" unique_id=835594043 instance=ExtResource("3_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4432732, 2.2812037, -8.609975)
+is_for_shader_fix = true
+
 [node name="player" type="CharacterBody3D" parent="." unique_id=43331874 node_paths=PackedStringArray("sawblade")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3443818, -1.9238312, -5.2713966)
 floor_snap_length = 23.03
@@ -764,7 +794,7 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="player/SubViewportContainer/SubViewport" unique_id=821853477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -4.110088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3443818, -1.2478528, -7.261749)
 
 [node name="RayCast3D2" type="RayCast3D" parent="player" unique_id=1970236734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022752047, 0)
@@ -929,6 +959,16 @@ text = "Value of property destroyed = "
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Control" unique_id=584534033]
 libraries/ = SubResource("AnimationLibrary_cegan")
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=571241197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=676702208]
 libraries/ = SubResource("AnimationLibrary_ycdy4")

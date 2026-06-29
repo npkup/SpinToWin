@@ -11,7 +11,6 @@ class_name Cool_Button extends Button
 var press_sound_player : AudioStreamPlayer = AudioStreamPlayer.new()
 
 func _ready() -> void:
-	offset_transform_enabled = true
 	pivot_offset_ratio = Vector2(0.5, 0.5)
 	
 	mouse_entered.connect(_on_mouse_hover)
